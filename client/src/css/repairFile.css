@@ -1,0 +1,540 @@
+/* repairFile Page */
+.repairFile{
+    /* width: 100vh; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .repairFileStep{
+    position: relative;
+    width: 100%;
+    height: 75%;
+    max-height:65%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    /* max-height: 800px; */
+    overflow-x: hidden;
+    padding-left: 2vw;
+  }
+  .repairFileStepperBox{
+    width: 100%;
+    z-index: 20;
+    background-color: rgba(215, 215, 215, 1);
+    padding-top: 3vh;
+    padding-bottom: 1vh;
+    padding-left: 2%;
+    padding-right: 5%;
+  }
+  .iconsContainer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 30px 10px 10px 0;
+    list-style: none;
+    flex-wrap: wrap;
+    transition: all 0.15s ease-in;
+    margin-left: 6vw;
+  }
+  .categoryIcon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+    cursor: pointer;
+    border-style: none;
+    background-color: rgba(0,0,0,0);
+  }
+  .categoryIcon:hover{
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  .categoryIcon img{
+    width: 96px;
+    box-shadow: 4px 4px 3px 4px #c5c5c5;
+    border-radius: 4px;
+    transition: transform .2s;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 5px;
+  }
+  .categoryIcon p{
+    font-size: 0.9em;
+  }
+  .formContainer{
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 8vw;
+    margin-top: 1vh;
+    font-size: 1.1em;
+    width: 84vw;
+  }
+  .formContainer input{
+    width: 30vw;
+  }
+  .prevStepBtn{
+    margin-left: 15px;
+    margin-right: 50px;
+  }
+  .nextStepBtnContainer{
+    width: 80%; 
+    margin-left: 10%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8vh;
+    margin-bottom: 2vh;
+  }
+  .warning{
+    font-size: 0.7em;
+    color: #e7195a;
+  }
+  /* RepairFile Status*/
+  .repairFileStepHeader{
+    width: 100%;
+    height: 8%;
+    max-height: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #9066cc;
+    color: #ddd;
+    font-size: 1.2em;
+  }
+  .statusBtnContainer{
+    width: 85%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 8vw;
+    /* margin-top: 8vh; */
+  }
+  .statusBtn{
+    text-decoration: none;
+    color: #ddd;
+    background-color: #1aac83;
+    font-size: 1.4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    border-style: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  /* RepairFile Adress */
+  .citySelectRepairFile{
+    width: 30vw;
+    padding: 10px;
+    font-size: 1em;
+  }
+  /* RepairFile Offer */
+  .offerDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+    cursor: pointer;
+    box-shadow: 4px 4px 3px 4px #c5c5c5;
+    border-radius: 4px;
+    transition: transform .2s;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 5px;
+  }
+  .offerDiv:hover{
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  .repairFileOfferContainer{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;
+    margin-top:4vh;
+    width:80vw;
+    margin-left:10vw
+  }
+  .workShopInterTypeContainer{
+    display: flex;
+    flex-direction:column;
+    width:80vw;
+    margin-top:4vh;
+    margin-left:10vw;
+    border:1px solid #3f2564;
+    padding:10px;
+    border-radius:6px
+  }
+  .agencyInfos{
+    display: flex;
+    flex-direction:column;
+    align-items:center; 
+    justify-content: center;
+    font-style:italic; 
+    font-size:1.2em;
+    color:#3f2564;
+    margin-top:2vh
+  }
+  .offerSelected{
+    display: flex;
+    flex-direction:column;
+    padding:15px;
+    background-color:#7dcb97
+  }
+  .offerUnselected{
+    display: flex;
+    flex-direction:column;
+    padding:15px;
+  }
+  .remoteOfferSelected{
+    display: flex;
+    flex-direction:column;
+    padding:5px;
+    background-color:#7dcb97
+  }
+  .remoteOfferUnselected{
+    display: flex;
+    flex-direction:column;
+    padding:5px;
+  }
+  /* RepairFile Datas */
+  .adviceContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 30px 10px 10px 0;
+    list-style: none;
+    flex-wrap: wrap;
+    transition: all 0.15s ease-in;
+    margin-left: 5%;
+    width: 90%;
+  }
+  .adviceDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    cursor: pointer;
+    box-shadow: 4px 4px 3px 4px #c5c5c5;
+    border-radius: 4px;
+    transition: transform .2s;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 5px;
+    width: 17%;
+    margin-top: 12px;
+    font-size: 0.8em;
+  }
+  .dayPlanningContainer{
+    width: 100%; 
+    height: 100%;
+    display:flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 30px 10px 10px 0;
+    margin-left: 0px;
+    list-style: none;
+    flex-wrap: wrap;
+    transition: all 0.15s ease-in;
+    margin-left: 2vw;
+  }
+  .dayPlanningDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 95px;
+    height: 45px;
+    cursor: pointer;
+    box-shadow: 4px 4px 3px 4px #c5c5c5;
+    border-radius: 4px;
+    transition: transform .2s;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 12px;;
+    /* padding: 5px; */
+    font-size: 0.8em;
+  }
+  .articleCode{
+    margin-top: 5vh;
+    margin-left: 25%;
+    width: 50%;
+  }
+  .serialNumber{
+    margin-top: 2vh;
+    margin-left: 25%;
+    width: 50%;
+  }
+  .questionMarkBtn{
+    width: 25px; 
+    height: 25px;
+    margin-left:10px; 
+    margin-bottom:10px;
+    cursor: pointer;
+  }
+
+  /* RepairFile Intervention*/
+  .overviewDiv{
+    width: 100%;
+    margin-top: 1vh;
+    display: flex;
+    background-color: #d5f7e1;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    box-shadow: inset 0px 0px 20px 10px rgba(92, 92, 92, 0.1);
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .overviewDiv p{
+    font-size: 1em;
+  }
+  .leaflet-container {
+    /* position: absolute; */
+    width: 98%;
+    height: 30vh;
+    border-radius: 6px;
+  }
+  .leaflet-marker-icon{
+    background-color:rgba(0,0,0,0);
+    border-style:none
+  }
+  .leaflet-control-attribution{
+    display: none;
+  }
+  .react-calendar{
+    border-radius: 6px;
+    border:0
+  }
+  .timeSlotSelected{
+    display: flex;
+    flex-direction:column;
+    padding:15px;
+    background-color:#7dcb97
+  }
+  .timeSlotUnselected{
+    display: flex;
+    flex-direction:column;
+    padding:15px;
+    background-color:#fff
+  }
+
+  @media only screen and (max-width: 480px){
+    .repairFileStep{
+      /* max-height: 600px; */
+      width: 100%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      padding-left: 4vw;
+    }
+    .repairFileStepHeader{
+      margin-left: 8vw;
+    }
+    .iconsContainer{
+      width: 90%;
+      padding-right: 2vw;
+      margin-left: 14vw;
+    }
+    .formContainer{
+      font-size: 0.8em;
+      margin-left: 12vw;
+      width: 50vw;
+      padding-left: 7vw;
+      width: 85%;
+    }
+    .statusBtnContainer{
+      width: 70%;
+      height: 60%;
+      margin-left: 16vw;
+      margin-top: 8vh;
+    }
+    .statusBtn{
+      font-size: 0.9em;
+      width: 30vw;
+      padding-top: 2vw;
+      padding-bottom: 2vw;
+    }
+    .nextStepBtnContainer{
+      flex-direction: column;
+      width: 80%;
+      margin-left: 10%;
+    }
+    .nextStepBtn{
+      margin-top: 2vh;
+    }
+    .prevStepBtn{
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+    }
+    .prevStepBtnAdress{
+      width: 85%;
+    }
+  }
+  
+  @media only screen and (min-width: 480px) and (max-width: 600px){
+    .repairFileStep{
+      /* height: 80%;
+      max-height: 75%; */
+      overflow-y: scroll;
+      overflow-x: hidden;
+      padding-left: 10vw;
+    }
+    .iconsContainer{
+      width: 90%;
+      padding-right: 2vw;
+      margin-left: 4vw;
+    }
+    .formContainer{
+      font-size: 0.9em;
+      margin-left: 5vw;
+      /* width: 70vw; */
+      padding-left: 2vw;
+      width: 100%;
+    }
+    .statusBtnContainer{
+      width: 70%;
+      height: 60%;
+      margin-left: 12vw;
+      margin-top: 8vh;
+    }
+    .statusBtn{
+      font-size: 1.1em;
+      width: 30vw;
+      padding-top: 2vw;
+      padding-bottom: 2vw;
+    }
+    .nextStepBtnContainer{
+      width: 80%;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .repairFileStepperBox{
+      height: 4vh;
+      padding-left: 12%;
+      width: 88%;
+    }
+    .repairFileStepperLabel{
+      visibility: hidden;
+    }
+    .categoryIcon{
+      height: 120px;
+    }
+    .categoryIcon img{
+      width: 66px;
+    }
+    .categoryIcon p{
+      font-size: 0.6em;
+    }
+    .radioLabel{
+      margin-right: 35px;
+    }
+  }
+  
+  
+  @media only screen and (max-width: 900px) and (min-width: 600px)  {
+    .repairFileStep{
+      /* max-height: 750px; */
+      width: 100%;
+      height: 90%;
+      overflow-x: hidden;
+      padding-left: 4vw;
+    }
+    .repairFileStepHeader{
+      margin-left: 2vw;
+    }
+    .repairFileStepperBox{
+      padding-left: 10%;
+      width: 88%;
+    }
+    .formContainer{
+      font-size: 0.9em;
+      margin-left: 10vw;
+      width: 82vw;
+    }
+    .formContainer input{
+      width: 50vw;
+      padding-left: 2vw;
+    }
+    .statusBtn{
+      font-size: 1.1em;
+      width: 25vw;
+      padding-top: 2vw;
+      padding-bottom: 2vw;
+    }
+  }
+  
+  @media only screen and (min-width: 900px) and (max-width: 1100px) {
+    /* modifier selon height != width */
+    .repairFileStep{
+      max-height: 600px;
+      overflow-x: hidden;
+      padding-left: 4vw;
+    }
+  }
+  
+  @media only screen and (max-height: 400px){
+    .repairFile{
+      max-height: 200px;
+      overflow-y: scroll;
+    }
+    .categoryIcon{
+      margin: 10px;
+      height: 100px;
+    }
+    .categoryIcon img{
+      width: 66px;
+    }
+    .categoryIcon p{
+      font-size: 0.7em;
+    }
+  }
+  @media only screen and (max-height: 600px){
+    .repairFile{
+      max-height: 350px;
+      overflow-y: hidden;
+    }
+    .categoryIcon{
+      margin: 10px;
+      height: 100px;
+    }
+    .categoryIcon img{
+      width: 66px;
+    }
+    .categoryIcon p{
+      font-size: 0.7em;
+    }
+  }
+  @media only screen and (max-height: 800px){
+    .repairFile{
+      /* max-height: 580px; */
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+    .categoryIcon{
+      margin: 10px;
+      height: 100px;
+    }
+    .categoryIcon img{
+      width: 66px;
+    }
+    .categoryIcon p{
+      font-size: 0.7em;
+    }
+  }
+  
