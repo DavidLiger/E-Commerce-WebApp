@@ -25,10 +25,14 @@ const updateFile = require('./routes/updateFile')
 const confirmationMail = require('./routes/confirmationMail')
 const remoteDiagPlanning = require('./routes/remoteDiagPlanning')
 const phoneDateFile = require('./routes/phoneDateFile')
+const upToPayment = require('./routes/upToPayment')
+const up2paymentresponse = require('./routes/up2paymentresponse')
+const deptsName = require('./routes/deptsName')
 //getArticle
 const getArticles = require('./routes/getArticles')
 
 const rawParser = bodyParser.raw({type: ["image/jpeg", "image/png", "image/jpg"], limit: "15mb"})
+
 // static assets
 app.use(express.static('./methods-public'))
 // parse form data
@@ -57,6 +61,9 @@ app.use('/api/v1/remoteDiagPlanning', remoteDiagPlanning)
 app.use('/api/v1/phoneDateFile', phoneDateFile)
 app.use('/api/v1/getArticles', getArticles)
 app.use('/api/v1/manageBlogImg', manageBlogImg)
+app.use('/api/v1/upToPayment', upToPayment)
+app.use('/api/v1/up2paymentresponse', up2paymentresponse)
+app.use('/api/v1/deptsName', deptsName)
 
 // TODO : garbage collector imgs dans /temp
 app.get('/', (req, res) => res.send('Hello World! from Node.js'))
