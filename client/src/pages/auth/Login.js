@@ -72,7 +72,7 @@ const Login  = () => {
     }
 
     return (
-        <div>
+        <div className="loginContainer">
             <form className="login">
                 <h3>S'identifier</h3>
                 <label>Email address:</label>
