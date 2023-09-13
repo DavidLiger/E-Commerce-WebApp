@@ -39,7 +39,8 @@ const RepairFileDatas = (props) => {
     const afternoonRef = useRef(0)
     const [ holidays, setHolidays ] = useState([])
     const [ year ,setYear ] = useState(new Date().toLocaleString('fr-FR').split(' ')[0].split('/')[2])
-    const [ dayPlanning, setDayPlanning ] = useState([{id:1, hour: 9}, 
+    const [ dayPlanning, setDayPlanning ] = useState([
+        {id:1, hour: 9}, 
         {id:2, hour: 10}, 
         {id:3, hour: 11}, 
         {id:4, hour: 12}, 
@@ -314,14 +315,14 @@ const RepairFileDatas = (props) => {
             </div>
             <div className='adviceContainer'>
             {intervention_type && (intervention_type == 'Domicile' || intervention_type == 'remote') &&
-                <div className="overviewDiv" style={{flexDirection:'column', width:'80%', marginTop:'1vh', marginBottom:'3vh'}}>
+                <div className="overviewDiv">
                     <label style={{fontSize:'1.4em', color:'#3f2564'}}>
                         Vous avez choisi { intervention_type == 'Domicile' ?
                             <span>l'intervention à Domicile</span> :
                             <span>le diagnostic à distance</span>
                         } :
                     </label>
-                    <span style={{marginLeft:'2vw', marginRight:'2vw', marginTop:'2vh', marginBottom:'2vh', fontSize:'0.9em'}}>
+                    <span className="datasText">
                     &emsp; Pour réaliser cette prestation, un technicien 909 va vous contacter
                         { intervention_type == 'Domicile' ?
                             <span> pour confirmer le
@@ -334,8 +335,8 @@ const RepairFileDatas = (props) => {
                         <br/><br/><p style={{textDecoration:'underline'}}>A savoir : </p>&emsp;Si lors de cet appel vous être devant votre appareil ce n’est que mieux, sinon veillez à compléter de façon
                         complète et précise les informations suivantes
                     </span>
-                    <div style={{display:'flex', flexDirection:'row', width:'100%', marginBottom:'1vh'}}>
-                        <div style={{width:'50%', marginLeft:'3%', display:'flex', alignItems:'center', justifyContent:'center'}}>
+                    <div className="calendarPlanningContainer">
+                        <div className="calendarContainer">
                             <Calendar
                             // faire un handle RDVDate qui setState & dispatche dans Redux
                                 onChange={handleAppointment}
@@ -376,6 +377,7 @@ const RepairFileDatas = (props) => {
                     <span className='warning center' style={{marginTop: '1vh', fontSize: '1em'}}>Merci de choisir un créneau horaire</span>
                 }
             </div>
+            <div className="adviceBtnsContainer">
             {advices && advices.map((item, index)=>(
                         <div 
                             key={index} 
@@ -393,6 +395,7 @@ const RepairFileDatas = (props) => {
                         </div>
                     ))
                 }
+            </div>
             </div>
             {props.missingValues.length > 0 && props.missingValues.includes('issue') && !issue &&
                     <span className='warning center' style={{marginTop: '2vh', fontSize: '1em'}}>Merci de choisir une panne</span>

@@ -30,10 +30,10 @@ const RepairFileOffer = (props) => {
             }
         }
         async function fetchDataForCategory() {
-            const {id} = repairFile.device
+            const {subCategoryId} = repairFile.device
             await fetch('/api/v1/rates',{
                 method: 'POST',
-                body: JSON.stringify({"id":id}),
+                body: JSON.stringify({"id":subCategoryId}),
                 headers: {
                     'Content-Type': 'application/json'
                 }

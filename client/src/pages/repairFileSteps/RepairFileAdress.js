@@ -163,13 +163,17 @@ const RepairFileAdress = (props) => {
                         onChange={(e) => {handleZipCode(e.target.value)}}
                     />
                     <label style={{marginTop: '2vh'}}>Ville:</label>
-                    <select className="citySelectRepairFile" value={selectedCityId} onChange={(e) => handleCity(e.target.value)}>
-                        {!cities.length > 0 && <option value="1">Entrez un Code Postal</option>}
-                        {/* {cities.length > 0 && <option value="nocity">Choisissez une commune</option>} */}
-                        {cities.map((town)=>(
-                                <option key={town.id} value={town.id}>{town.name}</option>
-                            ))
-                        }
+                    <select 
+                        className="citySelectRepairFile" 
+                        value={selectedCityId} 
+                        onChange={(e) => handleCity(e.target.value)}
+                        >
+                            {!cities.length > 0 && <option value="1">Entrez un Code Postal</option>}
+                            {/* {cities.length > 0 && <option value="nocity">Choisissez une commune</option>} */}
+                            {cities.map((town)=>(
+                                    <option key={town.id} value={town.id}>{town.name}</option>
+                                ))
+                            }
                     </select>
                     {props.missingValues.length > 0 && props.missingValues.includes('zipcode') && !zipcode &&
                                 <span className='warning'>Merci de choisir un code postal !</span>

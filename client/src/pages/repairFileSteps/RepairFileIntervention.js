@@ -18,7 +18,7 @@ const RepairFileIntervention = (props) => {
                     <AgencyInfos agency={repairFile.nearestAgency} />
                 </div>
                 }
-            <div style={{display:'flex', width:'100%'}}>
+            <div className="recapText">
                 {intervention_type == 'Domicile' &&
                     <div className='overviewDiv' style={{width:'80%', marginLeft:'10%',flexDirection:'column', padding:'5px'}}>
                         <p>Madame, Monsieur {user.last_name}</p>

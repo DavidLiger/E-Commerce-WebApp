@@ -1,17 +1,37 @@
+import { useState } from "react"
 import { useSelector } from "react-redux"
 
 const RepairFilePayment = (props) => {
 
     const { repairFile } = useSelector((store) => store.repairFile)
     const { user } = useSelector((store) => store.user)
+    const [ paymentIFrame, setPaymentIFrame ] = useState('')
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        let email = user.user.email
         // remettre toute la partie persistance photo suite à la 
         // persistance du dossier 
         // + partie get dans fileModal
         // + suppression des photos dans BDD (delete) si suppression dossier ou
         // suppression photo par l'utilisateur
+
+        await fetch('/api/v1/upToPayment',{
+                method: 'POST',
+                body: JSON.stringify({email: email, price: repairFile.price}),
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization':`Bearer ${user.token}`
+                }
+        }).then(async response =>{
+            await response.json()
+            .then(async json =>{
+                console.log(json);
+                setPaymentIFrame(json.result)
+            })
+        })
+
+        //Enchainement des actions suite au paiement
         await fetch('/api/v1/repairfile',{
             method: 'POST',
             body: JSON.stringify(repairFile),
@@ -126,12 +146,12 @@ const RepairFilePayment = (props) => {
                             }
                         })
                     })
-                    // 2 - paiement
-                    // 3 - si paiement == ok -> flux vers BO
+        //             // 2 - paiement
+        //             // 3 - si paiement == ok -> flux vers BO
 
-                    // 4 - si retour id_bo -> confirm : Mail, SMS
-                    // + message client 'dossier enregistré, confirmation par mail...'
-                    console.log('persisted');
+        //             // 4 - si retour id_bo -> confirm : Mail, SMS
+        //             // + message client 'dossier enregistré, confirmation par mail...'
+        //             console.log('persisted');
                     }
             })
         })
@@ -141,14 +161,15 @@ const RepairFilePayment = (props) => {
         <div className="repairFileStepHeader">
             <p style={{marginLeft: '4vw'}}>{props.header}</p>
         </div>
-            <div className="overviewDiv">
+            <div>
+                {paymentIFrame}
+            </div>
+            <div className="nextStepBtnContainer">
                 <button 
                     className="prevStepBtn modalButton"
                     onClick={handleSubmit}
                 >Save</button>
-            </div>
-            <div className='nextStepBtnContainer'>
-                <button className="prevStepBtn modalButton" onClick={props.handlePrevClick}>Précédent</button>
+                <button className="nextStepBtn modalButton" onClick={props.handlePrevClick}>Précédent</button>
             </div>
         </div>
     )
