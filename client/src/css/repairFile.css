@@ -90,6 +90,7 @@
   .warning{
     font-size: 0.7em;
     color: #e7195a;
+    justify-content: center;
   }
   /* RepairFile Status*/
   .repairFileStepHeader{
@@ -141,7 +142,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 160px;
+    /* height: 160px; */
     cursor: pointer;
     box-shadow: 4px 4px 3px 4px #c5c5c5;
     border-radius: 4px;
@@ -221,10 +222,6 @@
     width: 90%;
   }
   .adviceDiv{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 100px;
     cursor: pointer;
     box-shadow: 4px 4px 3px 4px #c5c5c5;
@@ -233,9 +230,22 @@
     margin-left: 12px;
     margin-right: 12px;
     padding: 5px;
-    width: 17%;
+    width: 150px;
     margin-top: 12px;
     font-size: 0.8em;
+  }
+  .calendarPlanningContainer{
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    margin-bottom:1vh
+  }
+  .calendarContainer{
+    width:50%;
+    margin-left:3%;
+    display:flex;
+    align-items:center;
+    justify-content:center
   }
   .dayPlanningContainer{
     width: 100%; 
@@ -269,6 +279,13 @@
     /* padding: 5px; */
     font-size: 0.8em;
   }
+  .datasText{
+    margin-left:2vw;
+    margin-right:2vw;
+    margin-top:2vh;
+    margin-bottom:2vh;
+    font-size:0.9em
+  }
   .articleCode{
     margin-top: 5vh;
     margin-left: 25%;
@@ -286,12 +303,29 @@
     margin-bottom:10px;
     cursor: pointer;
   }
+  .adviceBtnsContainer{
+    width: 80%;
+    max-width: 80%;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    /* flex-wrap: wrap; */
+    flex-direction: row;
+    height: 160px;
+  }
 
   /* RepairFile Intervention*/
+  .recapText{
+    display:flex;
+    width:80%;
+    margin-left: 10%;
+  }
   .overviewDiv{
-    width: 100%;
+    width: 80%;
     margin-top: 1vh;
+    margin-bottom: 3vh;
     display: flex;
+    flex-direction:column;
     background-color: #d5f7e1;
     justify-content: center;
     align-items: center;
@@ -371,7 +405,7 @@
     .nextStepBtnContainer{
       flex-direction: column;
       width: 80%;
-      margin-left: 10%;
+      margin-left: 15%;
     }
     .nextStepBtn{
       margin-top: 2vh;
@@ -443,6 +477,23 @@
     }
     .radioLabel{
       margin-right: 35px;
+    }
+    .calendarPlanningContainer{
+      flex-direction: column;
+    }
+    .calendarContainer{
+      width: 90%;
+    }
+    .overviewDiv{
+      width: 80%;
+      margin-left: 10%;
+    }
+    .datasText{
+      font-size: 0.8em;
+    }
+    .recapText{
+      margin-left: 15%;
+      font-size: 0.8em;
     }
   }
   

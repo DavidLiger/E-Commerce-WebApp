@@ -1,0 +1,197 @@
+.page1TitleContainer{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: 15%
+}
+.page2Container{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height:90%;
+    margin-left: 5%;
+    align-items: center
+}
+
+.page2TitleContainer{
+    display: flex;
+    flex-direction: row;
+    height: 12%;
+    justify-content: flex-end;
+    align-items: flex-end
+}
+
+.page2Text{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height:20%;
+    margin-left: 10%;
+    align-items: center;
+    color: #fff;
+    font-size: 1.3em;
+    justify-content: center
+}
+
+.page2InfosContainer{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height:25%;
+    justify-content: center;
+    margin-top: 5%;
+    align-items: center
+}
+
+.infoColumn{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 60%;
+    margin-left: 3%;
+    margin-right: 3%;
+    align-items: center;
+    color: #fff;
+    font-size: 1.3em
+}
+
+.page3TitleContainer{
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-weight: bold;
+    font-size: 1.8em;
+    margin-top:50px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.page4InfosContainer{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height:85%;
+    margin-top:5%;
+}
+
+.infoColumnWhiteBG{
+    display:flex;
+    flex-direction: column;
+    width: 30%;
+    height: 70%;
+    margin-left: 3%;
+    margin-right: 3%;
+    justify-content: space-around;
+    color: #3f2564;
+    font-size: 1.3em;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 15px;
+}
+
+.infosColumnWhiteBGTitle{
+    display:flex;
+    flex-direction: column;
+}
+
+.infosColumnWhiteBGTitletext{
+    display:flex;
+    flex-direction: column;
+}
+.page4TitleContainer{
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    font-size: 1.8em;
+    height: 10%;
+    justify-content: flex-end;
+    align-items: flex-end
+}
+
+@media only screen and (max-width: 600px){
+    .page1TitleContainer{
+        font-size: 0.9em;
+    }
+    .page2TitleContainer{
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        margin-left: 10%;
+        font-size: 0.9em;
+    }
+    .page2Text{
+        font-size: 1em;
+        height:20%;
+    }
+    .page2InfosContainer{
+        height:40%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    .infoColumn{
+        margin-top: 10%;
+        flex-direction: row; 
+        justify-content: space-between;
+        width: 90%;
+    }
+    .page4InfosContainer{
+        width: 80%;
+        margin-left: 10%;
+        max-height: 62%;
+    }
+    .page3TitleContainer{
+        flex-direction: column;
+        margin-top:60vh;
+        font-size: 1.4em;
+    }
+    .infoColumnWhiteBG{
+        flex-direction: column;
+        width: 90%;
+        height: 60%;
+    }
+    .page4TitleContainer{
+        height: 12%;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .page3TitleContainer{
+        flex-direction: column;
+        /* margin-top:60vh; */
+        font-size: 1.4em;
+    }
+    .page4InfosContainer{
+        flex-direction: column;
+        height: 80%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .infoColumnWhiteBG{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .infosColumnWhiteBGTitle{
+        flex-direction: row; 
+    }
+    .infosColumnWhiteBGTitletext{
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px){
+    .page4InfosContainer{
+        max-height: 60%;
+
+    }
+    .infoColumnWhiteBG{
+        flex-direction: column;
+        width: 90%;
+        height: 45%;
+    }
+
+}
