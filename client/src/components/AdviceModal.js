@@ -17,11 +17,11 @@ const AdviceModal = (props) => {
   }
 
   return (
-    <div className='center' style={{width:'100vw', height:'25vh'}}>
+    <div>
       <button 
         // className='modalButton'
         id='repairButton' 
-        style={{position:'relative',fontSize:'1.2em', borderRadius:'6px', borderStyle:'none', backgroundColor:'rgba(255, 255, 255, 0.5)',width:'15%',height:'100%', cursor:'pointer'}} 
+        style={{position:'relative',fontSize:'1.2em', borderRadius:'6px', borderStyle:'none', backgroundColor:'rgba(255, 255, 255, 0.5)',width:'150px',height:'100px', cursor:'pointer'}} 
         onClick={openModal}
       >
         {props.title}

@@ -19,6 +19,7 @@ const DeviceModal = (props) => {
   }
 
   const handleCategoryIconClicked = async (name, category) => {
+    console.log(props);
         if(props.item.json.length > 1){
             if(subcategories.length == 0){
                 props.item.json.map( item => {
@@ -27,9 +28,9 @@ const DeviceModal = (props) => {
             }
             openModal()
         }else{
-            console.log(name);
-            let id = props.item.json[0].id
-            dispatch(setRepairFile({device: {id, name}}))
+            let deviceId = props.item.json[0].device_id
+            let subCategoryId = props.item.json[0].id
+            dispatch(setRepairFile({device: {deviceId, subCategoryId, name}}))
             dispatch(setRepairFile({category: category}))
             reset()
         }
@@ -37,8 +38,9 @@ const DeviceModal = (props) => {
         props.setSelectedIcon(name)
     }
 
-    const setExactDevice = (id, name, category) => {
-        dispatch(setRepairFile({device: {id, name}}))
+    const setExactDevice = (id, subCategoryId, name, category) => {
+      console.log(subCategoryId);
+        dispatch(setRepairFile({device: {id, subCategoryId, name}}))
         dispatch(setRepairFile({category: category}))
         reset()
         closeModal()
@@ -76,7 +78,7 @@ const DeviceModal = (props) => {
             {subcategories.length > 0 && subcategories.map((subCategory, index) => {
                 return <button 
                             key={index}
-                            onClick={() => {setExactDevice(subCategory.id, props.item.name, props.item.category)}}
+                            onClick={() => {setExactDevice(subCategory.device_id, subCategory.id, props.item.name, props.item.category)}}
                             style={customStyles.button}
                         >{subCategory.subcategory}
                         </button>
@@ -98,7 +100,9 @@ const customStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     padding: '15px',
-    color: '#444444'
+    color: '#444444',
+    height: '20vh',
+    overflowY: 'scroll'
   },
   overlay: {
     position: 'fixed',

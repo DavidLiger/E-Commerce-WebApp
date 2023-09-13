@@ -84,7 +84,8 @@ const Navbar = () => {
                         alt="909"
                     />
                 </Link>
-                <nav style={{display:'flex', width:'45%', justifyContent:'flex-end'}}>
+                <nav style={{display:'flex', width:'35%', justifyContent:'space-between', flexDirection:'row'}}>
+                    <Link to="/rendez-vous" className="repairLink" style={{display:'flex', justifyContent:'flex-start', alignItems:'flex-start'}}>Je prends RDV</Link>
                     {user && (
                         <div style={{marginRight:'25px'}}>
                             <Button 
